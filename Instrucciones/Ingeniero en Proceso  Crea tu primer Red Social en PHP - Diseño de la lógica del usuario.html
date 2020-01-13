@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html class="v2" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<link type="text/css" rel="stylesheet" href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/2258130529-css_bundle_v2.css">
+<meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible">
+<meta content="width=1100" name="viewport">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="blogger" name="generator">
+<link href="http://danielbrena.blogspot.mx/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="http://danielbrena.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Ingeniero en Proceso - RSS" href="http://danielbrena.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="https://www.blogger.com/feeds/206076588588443791/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="http://danielbrena.blogspot.com/feeds/3711826817295592133/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3832463125-ieretrofit.js"></script>
+<![endif]-->
+<link href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code.png" rel="image_src">
+<meta content="Crea tu primer Red Social en PHP - Diseño de la lógica del usuario." name="description">
+<meta content="http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html" property="og:url">
+<meta content="Crea tu primer Red Social en PHP - Diseño de la lógica del usuario." property="og:title">
+<meta content="Crea tu primer Red Social en PHP - Diseño de la lógica del usuario." property="og:description">
+<meta content="http://1.bp.blogspot.com/-9DqdsNLC1zY/Ubj_22jdSUI/AAAAAAAABC4/pqMDe6jCISc/w1200-h630-p-k-no-nu/code.png" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Ingeniero en Proceso: Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.</title>
+<link href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/css.css" rel="stylesheet" type="text/css"><style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Open Sans;
+color: #666666;
+background: #ffffff url(http://2.bp.blogspot.com/-e2CNQ65AB4Q/UX2cEcUlY6I/AAAAAAAAA70/48FqBPlHxnU/s0/grid-18px-masked.png) repeat scroll top left;
+padding: 0 0 0 0;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #259dea;
+}
+a:visited {
+text-decoration:none;
+color: #fc3d61;
+}
+a:hover {
+text-decoration:underline;
+color: #217db8;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent none repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 0 #333333;
+box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 40px;
+}
+.content-inner {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: #259dea none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal normal 50px GFS Neohellenic;
+color: #ffffff;
+text-shadow: 0 0 0 rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #ffffff;
+}
+.Header .description {
+font-size: 18px;
+color: #ffffff;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 0;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 0;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 0 solid #fc3d61;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -1px;
+border-top: 1px solid #fc3d61;
+border-left: 1px solid #fc3d61;
+border-right: 1px solid #fc3d61;
+}
+.tabs-inner .widget ul {
+background: transparent none repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #fc3d61;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 14px Open Sans;
+color: #ffffff;
+border-left: 1px solid #ffffff;
+border-right: 1px solid #fc3d61;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #666666;
+background-color: #eeeeee;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #eeeeee;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #eeeeee;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #eeeeee;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 11px 'Trebuchet MS',Trebuchet,Verdana,sans-serif;
+color: #259dea;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #999999;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal normal 11px GFS Neohellenic;
+}
+.date-header span {
+background-color: #fc3d61;
+color: #ffffff;
+padding: 0.4em;
+letter-spacing: 3px;
+margin: inherit;
+}
+.main-inner {
+padding-top: 35px;
+padding-bottom: 65px;
+}
+.main-inner .column-center-inner {
+padding: 0 0;
+}
+.main-inner .column-center-inner .section {
+margin: 0 1em;
+}
+.post {
+margin: 0 0 45px 0;
+}
+h3.post-title, .comments h4 {
+font: normal bold 30px GFS Neohellenic;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #ffffff;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #666666;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #ffffff;
+background-color: #52536d;
+border-bottom: 1px solid #ffffff;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #eeeeee;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #ffffff;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .comment-thread.inline-thread {
+background-color: #52536d;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #eeeeee;
+}
+.blog-pager {
+background: transparent url(//www.blogblog.com/1kt/simple/paging_dot.png) repeat-x scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 1px dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #666666;
+}
+.mobile-link-button {
+background-color: #259dea;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #eeeeee;
+color: #666666;
+border-top: 1px solid #fc3d61;
+border-bottom: 1px solid #fc3d61;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #fc3d61;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1208px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1208px;
+max-width: 1208px;
+_width: 1208px;
+}
+.main-inner .columns {
+padding-left: 0;
+padding-right: 270px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0;
+right: 270px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0") -
+parseInt("270px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 270px;
+}
+.main-inner .column-left-outer {
+width: 0;
+right: 100%;
+margin-left: -0;
+}
+.main-inner .column-right-outer {
+width: 270px;
+margin-right: -270px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<!--SYNTAX HIGHLIGHTER BEGINS-->
+<link href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shCore.css" rel="stylesheet" type="text/css">
+<link href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shThemeDefault.css" rel="stylesheet" type="text/css">
+<script async="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/analytics.js"></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/cbgapi.loaded_4" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/cbgapi.loaded_3" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/cbgapi.loaded_2" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/cbgapi.loaded_1" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/cbgapi.loaded_0" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shCore.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushCpp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushCSharp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushCss.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushJava.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushJScript.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushPhp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushPython.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushRuby.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushSql.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushVb.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushXml.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushPerl.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/shBrushBash.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/swift.js" type="text/javascript"></script>
+<script language="javascript">
+SyntaxHighlighter.config.bloggerMode = true;
+SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+<!--SYNTAX HIGHLIGHTER ENDS-->
+<link href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/authorization.css" media="all" onload="if(media!='all')media='all'" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=206076588588443791&amp;zx=18b33e82-877d-479c-9d41-245ed1da1ae6' rel='stylesheet'/></noscript>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/google_top_exp.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><script async="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/lazy.js"></script><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/get_custom_js"></script></head>
+<body class=" variant-simplysimple">
+<div class="navbar section" id="navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="navbar-iframe" name="navbar-iframe" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/navbar.htm" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d206076588588443791\x26blogName\x3dIngeniero+en+Proceso\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://danielbrena.blogspot.com/search\x26blogLocale\x3des\x26v\x3d2\x26homepageUrl\x3dhttp://danielbrena.blogspot.com/\x26targetPostID\x3d3711826817295592133\x26blogPostOrPageUrl\x3dhttp://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html\x26vt\x3d236809043743670352',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://danielbrena.blogspot.mx/">
+Ingeniero en Proceso
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>Desarrollo de Software en general y en particular.</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs no-items section" id="crosscol"></div>
+<div class="tabs no-items section" id="crosscol-overflow"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>lunes, 3 de febrero de 2014</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="http://1.bp.blogspot.com/-9DqdsNLC1zY/Ubj_22jdSUI/AAAAAAAABC4/pqMDe6jCISc/s1600/code.png" itemprop="image_url">
+<meta content="206076588588443791" itemprop="blogId">
+<meta content="3711826817295592133" itemprop="postId">
+<a name="3711826817295592133"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-3711826817295592133" itemprop="articleBody">
+<br>
+<div class="separator" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;">
+<img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code.png" border="0" width="200" height="200"></div>
+<br>
+<br>
+<h4>
+<span style="color: #444444;">Recordando en la&nbsp;<a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" target="_blank">entrada anterior</a>, diseñamos nuestra base de datos, ahora comenzaremos con la programación de nuestra red social.</span><span style="color: #444444;">Lo
+ primero es tratar de crear toda la lógica de nuestro proyecto y cuando 
+sea funcional pasaremos a crear la apariencia para que se vea mas 
+presentable.&nbsp;</span></h4>
+<br>
+<br>
+<br>
+Para nuestra red social vamos a ir creando nuestras clases en php, así 
+que para empezar, vamos a utilizar una clase que nos conecte con la Base
+ de Datos y se nos facilite la manipulación de la misma.<br>
+He creado una clase para esto en unas entradas atras, pueden revisarla en el siguiente enlace:<br>
+<a href="http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html" target="_blank">Crear una clase en PHP para el manejo de consultas en la Base de Datos</a><br>
+Esa clase vamos a utilizar, solo es cuestión de cambiarle el nombre de la base de datos en la propiedad:<br>
+<b>db_name</b> a "<i>social".</i><br>
+<i><br></i>
+<i><br></i>
+Nuestra clase se llamara <b>modelUsuario</b> el cual se encontrara en un archivo llamado<b> modelUsuario.php</b>, esta clase heredara de nuestra clase abstracta&nbsp;<b>modeloBD</b> que es la que mencionaba anteriormente.<br>
+<i><br></i>
+La clase abstracta <b>modeloBD</b> contiene métodos abstractos el cual 
+toda aquella clase que herede de ella, contendrá dichos métodos por 
+defecto si no, nos mostrara un error.<br>
+<br>
+Propiedades de nuestra clase <b>modelUsuario</b>:<br>
+<ul>
+<li>idusuario</li>
+<li>nombre</li>
+<li>apellidoPaterno</li>
+<li>apellidoMaterno</li>
+<li>nacionalidad</li>
+<li>correo</li>
+<li>clave</li>
+</ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+Como verán, nuestras propiedades de nuestra clase son las mismas que las columnas de la tabla usuario de nuestra <a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" target="_blank">Base de Datos</a> "social".<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-IJEQEGgetwk/Uu_lgZQxCzI/AAAAAAAABmA/tzfey13WO5I/s1600/Captura+de+pantalla+de+2014-02-03+06:52:26.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03065226.png" border="0"></a></div>
+<br>
+<i><br></i>
+<i><br></i>
+<b>Metodos</b><br>
+<i><br></i>
+<div style="text-align: center;">
+<i><b>GET</b></i></div>
+Nuestro método <b>GET</b> sera para obtener todos los datos de cierto 
+usuario en especifico, esto sera a través de su identificador (id), el 
+cual lo pasaremos por el parámetro del método.<br>
+Si id es correcto todos los datos le serán asignados a las propiedades 
+de la clase, los cual podemos acceder a ellos a través de sus métodos <b>GET</b> de cada propiedad.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-pirBqOOZ5pk/Uu_nNwJ-HKI/AAAAAAAABmM/FtCNOkGNqzI/s1600/Captura+de+pantalla+de+2014-02-03+06:55:54.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03065554.png" border="0"></a></div>
+<br>
+<i><br></i>
+<i><br></i>
+He insertado valores a la Base de Datos para ver que funcione.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-BOQYKsK_T80/Uu_ol1SwosI/AAAAAAAABmY/r29msAzZ1b8/s1600/Captura+de+pantalla+de+2014-02-03+07:05:56.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03070556.png" border="0" width="640" height="82"></a></div>
+<br>
+Para ir probando que sea funcional nuestro código, crearemos un archivo llamado <b>prueba.php</b> en el cual vamos a ir creando nuestros objetos.<br>
+<i><br></i>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-Ecq1dlp7-l8/Uu_pcCdbQiI/AAAAAAAABmg/znG3GjOj-EQ/s1600/Captura+de+pantalla+de+2014-02-03+07:09:34.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03070934.png" border="0"></a></div>
+<i><br></i>
+Abrimos nuestro navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-ean6pyyuI04/Uu_puXDu3MI/AAAAAAAABmo/D71O1JK46nA/s1600/Captura+de+pantalla+de+2014-02-03+07:10:41.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03071041.png" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<a name="more"></a><br><br>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+Se encontró, muy bien ahora queremos obtener sus datos de ese jugador, entonces llamamos a los siguientes métodos de la clase.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-9zMbJTW-aNI/Uu_q92DYN-I/AAAAAAAABm0/g-Pk2wXz4G4/s1600/Captura+de+pantalla+de+2014-02-03+07:15:54.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03071554.png" border="0"></a></div>
+<i><br></i>
+<i><br></i>
+En prueba agregamos lo siguiente.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-cSqp_qEatag/Uu_sQL4ZmiI/AAAAAAAABnA/rdQtaxZX13o/s1600/Captura+de+pantalla+de+2014-02-03+07:21:17.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03072117.png" border="0"></a></div>
+<br>
+<i><br></i>
+En el navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/--ymlOBWdiNs/Uu_sgbnIm7I/AAAAAAAABnI/_oYHVjvyOoU/s1600/Captura+de+pantalla+de+2014-02-03+07:22:29.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03072229.png" border="0"></a></div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div style="text-align: center;">
+<b>SET</b></div>
+<div style="text-align: center;">
+<i><br></i></div>
+Nuestro método sera en si, la forma de agregar un usuario a nuestra Red Social o que se registre.<br>
+Este método recibirá como parámetro un arreglo que contendrá todo los datos que necesitamos para agregarlos a la Base de Datos.<br>
+Si el correo que se ingresa ya se encuentra dentro de la base de datos, 
+lo tomaremos como si el usuario ya existiera y no podrá agregarlo.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-X1p3U5y217E/Uu_359RI-3I/AAAAAAAABnY/R-8GqNbc6Xc/s1600/Captura+de+pantalla+de+2014-02-03+07:47:36.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03074736.png" border="0" width="640" height="368"></a></div>
+<br>
+<i><br></i>
+En prueba.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-M_r9EGC3abA/Uu_4-FnPRpI/AAAAAAAABnk/vp4jkQrOE5Y/s1600/Captura+de+pantalla+de+2014-02-03+08:15:17.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03081517.png" border="0"></a></div>
+<br>
+En el navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-0zc34YmDGy4/Uu_5J5pksGI/AAAAAAAABns/Rbqa18r8l4s/s1600/Captura+de+pantalla+de+2014-02-03+08:16:37.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03081637.png" border="0"></a></div>
+Que paso? -Claro el correo ya existe y pertenece al usuario Daniel Brena.<br>
+Ahora lo cambiamos.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-FfydEeoj9Yw/Uu_5qmDPJ7I/AAAAAAAABn0/thIr2zMQVC0/s1600/Captura+de+pantalla+de+2014-02-03+08:18:46.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03081846.png" border="0"></a></div>
+<br>
+<i><br></i>
+Probamos.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-8FbY8qRTgRg/Uu_53h5wIbI/AAAAAAAABn8/djSnxaGNEZo/s1600/Captura+de+pantalla+de+2014-02-03+08:19:36.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03081936.png" border="0"></a></div>
+Vemos nuestra Base de Datos para asegurar que se inserto nuestro usuario.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-oQO5iH0etg4/Uu_6L-ub5HI/AAAAAAAABoE/L_li7iZM_ws/s1600/Captura+de+pantalla+de+2014-02-03+08:21:00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03082100.png" border="0" width="640" height="88"></a></div>
+<br>
+<i><br></i>
+<div style="text-align: center;">
+<b>EDIT</b></div>
+<i><br></i>
+Este método editara un registro de nuestra Base de Datos utilizando su identificador.<br>
+Se editara por medio de un arreglo como anteriormente.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-uJUls_QNyUo/Uu_8SBD1RtI/AAAAAAAABoQ/E19NgvjOxmk/s1600/Captura+de+pantalla+de+2014-02-03+08:29:23.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03082923.png" border="0"></a></div>
+<br>
+<br>
+Ahora en prueba solo le asignamos el id al arreglo y modificamos algunos valores.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-YmnvEsqj-7k/Uu_9C7EIprI/AAAAAAAABoY/LnliJ-cXj8c/s1600/Captura+de+pantalla+de+2014-02-03+08:33:12.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03083312.png" border="0"></a></div>
+<br>
+Recargamos el navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-norLVo2W2Yo/Uu_9OGy5LJI/AAAAAAAABog/M3GpJeOJmr0/s1600/Captura+de+pantalla+de+2014-02-03+08:34:00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03083400.png" border="0"></a></div>
+<br>
+<br>
+Vamos a nuestra Base de Datos.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-DvCgQBoQfb0/Uu_9Z24likI/AAAAAAAABoo/NCAH-FzNzWI/s1600/Captura+de+pantalla+de+2014-02-03+08:34:44.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03083444.png" border="0" width="640" height="76"></a></div>
+<br>
+<br>
+Perfecto, se actualizo.<br>
+<br>
+<br>
+<div style="text-align: center;">
+<b>DELETE</b></div>
+<br>
+EL método hará algo simple, eliminar el usuario de la Base de Datos.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-9bH37tLLSu4/Uu_-sijeO3I/AAAAAAAABo0/WnQBFikY-pM/s1600/Captura+de+pantalla+de+2014-02-03+08:40:18.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03084018.png" border="0"></a></div>
+<br>
+<br>
+En prueba.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-G-haQJm96_U/Uu_-88AZ94I/AAAAAAAABo8/GD3A3mc3SoI/s1600/Captura+de+pantalla+de+2014-02-03+08:41:22.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03084122.png" border="0"></a></div>
+<br>
+Recargamos el navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-sHWahYDME6U/Uu__KmkCxsI/AAAAAAAABpE/ZPSbpVhLWhs/s1600/Captura+de+pantalla+de+2014-02-03+08:42:00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03084200.png" border="0"></a></div>
+<br>
+Se elimino, nos dirigimos a la Base de Datos para confirmar.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-BOQYKsK_T80/Uu_ol1SwosI/AAAAAAAABmc/BLpMPnQmAEI/s1600/Captura+de+pantalla+de+2014-02-03+07%253A05%253A56.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03073A053A56.png" border="0" width="640" height="82"></a></div>
+<br>
+Hasta el momento acabamos con los métodos que eran generados por la clase abstracta&nbsp;<b>modeloBD.</b><br>
+Ahora bien, como hacer para que un usuario inicie sesión.<br>
+Creamos un método que se llame <b>init. </b>El cual se encargara de 
+buscar el usuario con su correo y clave en los parametros, si lo 
+encuentra, generara una sesión tomando su identificador.<br>
+<b><br></b>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-tnWNE40wQBY/UvABpnYAKZI/AAAAAAAABpc/RecTcHoRzYQ/s1600/Captura+de+pantalla+de+2014-02-03+08:52:41.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03085241.png" border="0"></a></div>
+<b><br></b>
+<br>
+Probamos.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-qh8BZdN4-xk/UvACAjmZ7OI/AAAAAAAABpk/F6BJFYvJtsk/s1600/Captura+de+pantalla+de+2014-02-03+08:54:19.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03085419.png" border="0"></a></div>
+<br>
+<br>
+Volvemos a recargar nuestro navegador.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-9CCU21xsUFM/UvACPtt2bVI/AAAAAAAABps/gHGG92hhGGM/s1600/Captura+de+pantalla+de+2014-02-03+08:54:03.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/Capturadepantallade2014-02-03085403.png" border="0"></a></div>
+<br>
+<br>
+Hasta ahora ya es funcional la parte del usuario, nos faltan varias cosas pero eso iremos trabajando en esos detalles.<br>
+Hay muchas formas de ir implementado esto, así que ustedes pueden ir optimizando esta pequeña Red Social.<br>
+<br>
+<br>
+<br>
+<div style="clear: both;"></div>
+<div id="lws_0"></div></div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+Publicado por
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://plus.google.com/100233039541981211032" itemprop="url">
+<a href="https://plus.google.com/100233039541981211032" rel="author" title="author profile">
+<span itemprop="name">Daniel Brena</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+en
+<meta content="http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html" itemprop="url">
+<a class="timestamp-link" href="http://danielbrena.blogspot.mx/2014/02/crea-tu-primer-red-social-en-php-diseno.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2014-02-03T13:01:00-08:00">13:01</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-1814217097">
+<a href="https://www.blogger.com/post-edit.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;from=pencil" title="Editar entrada">
+<img alt="" class="icon-action" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_edit_allbkg.gif" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;target=email" target="_blank" title="Enviar por correo electrónico"><span class="share-button-link-text">Enviar por correo electrónico</span></a><a class="goog-inline-block share-button sb-blog" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;target=blog" onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target="_blank" title="Escribe un blog"><span class="share-button-link-text">Escribe un blog</span></a><a class="goog-inline-block share-button sb-twitter" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;target=twitter" target="_blank" title="Compartir con Twitter"><span class="share-button-link-text">Compartir con Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;target=facebook" onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target="_blank" title="Compartir con Facebook"><span class="share-button-link-text">Compartir con Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;target=pinterest" target="_blank" title="Compartir en Pinterest"><span class="share-button-link-text">Compartir en Pinterest</span></a><div class="goog-inline-block google-plus-share-container"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1500684681380" name="I0_1500684681380" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/fastbutton.htm" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div></div>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2"><span class="post-labels">
+Etiquetas:
+<a href="http://danielbrena.blogspot.mx/search/label/Base%20de%20Datos" rel="tag">Base de Datos</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/MySQL" rel="tag">MySQL</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/PHP" rel="tag">PHP</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/Proyectos" rel="tag">Proyectos</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/Red%20Social" rel="tag">Red Social</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>1 comentario:</h4>
+<div class="comments-content">
+<script async="async" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/comments.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function() {
+      var items = [{'id': '8371699282839682051', 'body': 'podria dejar el codigo completo es mas facil analizarlo', 'timestamp': '1417215852578', 'permalink': 'http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html?showComment\x3d1417215852578#c8371699282839682051', 'author': {'name': 'JHON EDWARD QUINTERO BALANTA', 'avatarUrl': '//lh3.googleusercontent.com/-5Mbb5h3A-Mc/AAAAAAAAAAI/AAAAAAAAAIM/a352kEpdTUQ/s35-c/photo.jpg', 'profileUrl': 'https://www.blogger.com/profile/10483613374918191338'}, 'displayTime': '28 de noviembre de 2014, 15:04', 'deleteclass': 'item-control blog-admin pid-2139646406'}];
+      var msgs = {'loadMore': 'Cargar más...', 'loading': 'Cargando...', 'loaded': 'Ya no hay más', 'addComment': 'Añadir comentario', 'reply': 'Responder', 'delete': 'Eliminar'};
+      var config = {'blogId': '206076588588443791', 'postId': '3711826817295592133', 'feed': 'http://danielbrena.blogspot.com/feeds/3711826817295592133/comments/default', 'authorName': 'Daniel Brena', 'authorUrl': 'https://www.blogger.com/profile/04515219884676534817', 'baseUri': 'https://www.blogger.com', 'maxThreadDepth': 2};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          replybox.src = '';
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+<div id="comment-holder">
+
+<div id="bc_0_2C" kind="c"><div id="bc_0_2CT"><div id="bc_0_1T" class="comment-thread" kind="r" t="0" u="0"><ol id="bc_0_1TB"><li id="bc_0_0B" class="comment" kind="b"><div class="avatar-image-container"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/photo.jpg"></div><div id="c8371699282839682051" class="comment-block"><div id="bc_0_0M" class="comment-header" kind="m"><cite class="user"><a rel="nofollow" href="https://www.blogger.com/profile/10483613374918191338">JHON EDWARD QUINTERO BALANTA</a></cite><span class="icon user"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html?showComment=1417215852578#c8371699282839682051">28 de noviembre de 2014, 15:04</a></span></div><p id="bc_0_0MC" class="comment-content">podria dejar el codigo completo es mas facil analizarlo</p><span id="bc_0_0MN" class="comment-actions secondary-text" kind="m"><a kind="i" href="javascript:;" target="_self" o="r">Responder</a><span class="item-control blog-admin pid-2139646406"><a o="d" target="_self" href="https://www.blogger.com/delete-comment.g?blogID=206076588588443791&amp;postID=8371699282839682051">Eliminar</a></span></span></div><div id="bc_0_0BR" class="comment-replies"></div><div id="bc_0_0B_box" class="comment-replybox-single"></div></li></ol><div id="bc_0_1I" class="continue" kind="ci" style="display: none;"><a href="javascript:;" target="_self">Añadir comentario</a></div><div id="bc_0_1T_box" class="comment-replybox-thread"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment-editor" src="https://www.blogger.com/comment-iframe.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;blogspotRpcToken=55785#%7B%22color%22%3A%22rgb%28102%2C%20102%2C%20102%29%22%2C%22backgroundColor%22%3A%22rgb%28255%2C%20255%2C%20255%29%22%2C%22unvisitedLinkColor%22%3A%22rgb%2837%2C%20157%2C%20234%29%22%2C%22fontFamily%22%3A%22Open%20Sans%22%7D" style="display: block;" data-resized="true" width="100%" height="217px" frameborder="0"></iframe></div><div id="bc_0_1L" class="loadmore loaded" kind="rb"><a href="javascript:;" target="_self">Cargar más...</a></div></div></div></div></div>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=206076588588443791&amp;postID=3711826817295592133&amp;blogspotRpcToken=55785" id="comment-editor-src"></a>
+
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/569042235-comment_from_post_iframe.js" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://danielbrena.blogspot.mx/2014/04/listas-ligadas-simples-java.html" id="Blog1_blog-pager-newer-link" title="Entrada más reciente">Entrada más reciente</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" id="Blog1_blog-pager-older-link" title="Entrada antigua">Entrada antigua</a>
+</span>
+<a class="home-link" href="http://danielbrena.blogspot.mx/">Página principal</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Suscribirse a:
+<a class="feed-link" href="http://danielbrena.blogspot.com/feeds/3711826817295592133/comments/default" target="_blank" type="application/atom+xml">Enviar comentarios (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">
+    window.___gcfg = { 'lang': 'es' };
+  </script>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget PageList" data-version="1" id="PageList1">
+<h2>Páginas</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://danielbrena.blogspot.mx/">Página principal</a>
+</li>
+<li>
+<a href="http://danielbrena.blogspot.mx/p/terminos-y-condiciones-calculuspro.html">Privacy Policy CalculusPro</a>
+</li>
+<li>
+<a href="http://danielbrena.blogspot.mx/p/privacy-policy-calculuspro-use-of-this.html">Privacy Policy Happy Ball</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=PageList&amp;widgetId=PageList1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList1"));' target="configPageList1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PlusOne" data-version="1" id="PlusOne1">
+<div class="widget-content">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 106px; height: 24px;" id="___plusone_1"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 106px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" id="I1_1500684681411" name="I1_1500684681411" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/fastbutton_002.htm" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">
+      window.___gcfg = {"lang": "es"};
+    </script>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FDaniel.Brena.A&amp;width=250&amp;height=290&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=true&amp;header=true" scrolling="no" style="border:none; overflow:hidden; width:250px; height:290px;" allowtransparency="true" frameborder="0"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target="configHTML1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Profile" data-version="1" id="Profile1">
+<h2>Datos personales</h2>
+<div class="widget-content">
+<a href="https://plus.google.com/100233039541981211032"><img alt="Mi foto" class="profile-img" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/photo_002.jpg" width="80" height="80"></a>
+<dl class="profile-datablock">
+<dt class="profile-data">
+<a class="profile-name-link g-profile" href="https://plus.google.com/100233039541981211032" rel="author" style="background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+Daniel Brena
+</a>
+<br>
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 124px; height: 20px;" id="___follow_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 124px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I2_1500684681432" name="I2_1500684681432" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/follow.htm" data-gapiattached="true" width="100%" frameborder="0"></iframe></div>
+</dt>
+<dd class="profile-textblock">Estudiante de&nbsp;Ingeniería&nbsp;en Software y Sistemas Computacionales.<br>Microsoft Student Partner México.<br>Fundador de <a href="http://brenacademy.org/" rel="nofollow" target="_blank"><b>BREN</b>ACADEMY</a>.<br><br></dd>
+</dl>
+<a class="profile-link" href="https://plus.google.com/100233039541981211032" rel="author">Ver todo mi perfil</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target="configProfile1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PlusFollowers" data-version="1" id="PlusFollowers1">
+<h2 class="title">Google+ Followers</h2>
+<div class="widget-content">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 200px; height: 296px;" id="___plus_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 200px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 296px;" tabindex="0" vspace="0" id="I3_1500684681443" name="I3_1500684681443" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/followers.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">
+        window.___gcfg = {'lang': 'es'};
+      </script>
+</div>
+</div><div class="widget Followers" data-version="1" id="Followers1">
+<h2 class="title">Seguidores</h2>
+<div class="widget-content">
+<div id="Followers1-wrapper">
+<div style="margin-right:2px;">
+<div><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/plusone.js" gapi_processed="true"></script>
+<div id="followers-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="I0_1500684681461" name="I0_1500684681461" src="https://www.blogger.com/followers.g?blogID=206076588588443791&amp;colors=Cgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50&amp;pageSize=21&amp;postID=3711826817295592133&amp;origin=http://danielbrena.blogspot.mx/&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.es_419.JwI_mdkM9Uk.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCMi0rzwIPbmMD1sOVNjTyoqe5bwXg#id=I0_1500684681461&amp;parent=http%3A%2F%2Fdanielbrena.blogspot.mx&amp;pfname=&amp;rpctoken=36837776" width="100%" height="83" frameborder="0"></iframe></div>
+<script type="text/javascript">
+    window.followersIframe = null;
+    function followersIframeOpen(url) {
+      gapi.load("gapi.iframes", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          window.followersIframe = gapi.iframes.getContext().openChild({
+            url: url,
+            where: document.getElementById("followers-iframe-container"),
+            messageHandlersFilter: gapi.iframes.CROSS_ORIGIN_IFRAMES_FILTER,
+            messageHandlers: {
+              '_ready': function(obj) {
+                window.followersIframe.getIframeEl().height = obj.height;
+              },
+              'reset': function() {
+                window.followersIframe.close();
+                followersIframeOpen("https://www.blogger.com/followers.g?blogID\x3d206076588588443791\x26colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26postID\x3d3711826817295592133\x26origin\x3dhttp://danielbrena.blogspot.mx/");
+              },
+              'open': function(url) {
+                window.followersIframe.close();
+                followersIframeOpen(url);
+              },
+              'blogger-ping': function() {
+              }
+            }
+          });
+        }
+      });
+    }
+    followersIframeOpen("https://www.blogger.com/followers.g?blogID\x3d206076588588443791\x26colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26postID\x3d3711826817295592133\x26origin\x3dhttp://danielbrena.blogspot.mx/");
+  </script></div>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Followers&amp;widgetId=Followers1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Followers1"));' target="configFollowers1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML3">
+<div class="widget-content">
+<script type="text/javascript">
+	 var infolink_pid = 1802567;
+	var infolink_wsid = 0;
+	</script>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/infolinks_main.js">
+</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target="configHTML3" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<h2>Entradas populares</h2>
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/tablas-de-multiplicar-del-1-al-10-en.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/tablas-de-multiplicar-del-1-al-10-en.html">Tablas de multiplicar del 1 al 10 en Java</a></div>
+<div class="item-snippet">      Vamos a crear las tablas de multiplicar 
+del 1 al 10 en Java, esto es sencillo solo necesitamos un par de bucles 
+for y esta.           ...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/llenar-un-arreglo-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/llenar-un-arreglo-en-java.html">Llenar un arreglo en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/dibujar-cuadrado-vacio-con-asteriscos.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/dibujar-cuadrado-vacio-con-asteriscos.html">Dibujar cuadrado vacio con asteriscos en Java</a></div>
+<div class="item-snippet">      Dibujaremos un cuadrado, pidiendo al 
+usuario el tamaño, ojo, al dibujar el cuadrado les puede salir 
+desfigurado, que tenga mas forma d...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/formula-general-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/formula-general-en-java.html">Formula General en Java</a></div>
+<div class="item-snippet">    Se llama&nbsp; fórmula general &nbsp;a 
+una&nbsp; fórmula &nbsp;que comprende un número muy grande de casos y de
+ la que se &nbsp;pueden extraer otras fórmulas par...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/04/compilar-y-ejecutar-c-desde-sublime-text.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/sublime.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/04/compilar-y-ejecutar-c-desde-sublime-text.html">Compilar y ejecutar C++ desde Sublime Text</a></div>
+<div class="item-snippet">      Sublime viene con la 
+una&nbsp;opción&nbsp;por defecto para compilar C++, pero no lo ejecuta y
+ lo muestra por la consola, solo crea el archivo .e...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/11/como-declarar-un-arreglo-en-c.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/11/como-declarar-un-arreglo-en-c.html">Como declarar un arreglo en C.</a></div>
+<div class="item-snippet">    Como se usan los arreglos en el lenguaje 
+C.  Hay varias formas de declararlos, una forma es declarar desde el 
+principio el tamaño que te...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_004.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html">Crea tu primer Red Social en PHP - Diseño de la Base de Datos</a></div>
+<div class="item-snippet">      Comenzaremos a desarrollar una pequeña 
+Red Social, no como toda la infraestructura de las actuales como 
+Facebook o Twitter. Llevaremos...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/04/juego-del-ahorcado-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/ahorcado.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/04/juego-del-ahorcado-en-java.html">Juego del ahorcado en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html">Invertir un arreglo de números en Java</a></div>
+<div class="item-snippet">      Invertir un arreglo de números. Podemos 
+tener un arreglo así, por ejemplo: [2,3,4,5,6] y al invertirlo nos 
+quedara [6,5,4,3,2]. Lo mas...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/05/triangulo-de-pascal-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/consola.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/05/triangulo-de-pascal-en-java.html">Triangulo de Pascal en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=PopularPosts&amp;widgetId=PopularPosts1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target="configPopularPosts1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" data-version="1" id="Label1">
+<h2>Categorias</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/algoritmo">algoritmo</a>
+<span dir="ltr">(13)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/API">API</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/C%2B%2B">C++</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Facebook">Facebook</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Hacker%20Cup">Hacker Cup</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/ingenieria">ingenieria</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java">Java</a>
+<span dir="ltr">(25)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java%20b%C3%A1sico">Java básico</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java%20Intermedio">Java Intermedio</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/JavaScript">JavaScript</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Matematicas">Matematicas</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/practicas">practicas</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Problemas">Problemas</a>
+<span dir="ltr">(12)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Programa-me">Programa-me</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/python">python</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Sublime%20Text">Sublime Text</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/teddy%20online%20judge">teddy online judge</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Terminal">Terminal</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Tutoriales">Tutoriales</a>
+<span dir="ltr">(15)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>Archivo del blog</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/">
+2016
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/">
+2015
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/08/">
+agosto
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/03/">
+marzo
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/">
+2014
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/04/">
+abril
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/02/">
+febrero
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+<ul class="posts">
+<li><a href="http://danielbrena.blogspot.mx/2014/02/crea-tu-primer-red-social-en-php-diseno.html">Crea tu primer Red Social en PHP - Diseño de la ló...</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/">
+2013
+</a>
+<span class="post-count" dir="ltr">(49)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/12/">
+diciembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/11/">
+noviembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/09/">
+septiembre
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/08/">
+agosto
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(11)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/05/">
+mayo
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/04/">
+abril
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/02/">
+febrero
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2012/">
+2012
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2012/12/">
+diciembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot section" id="footer-1"><div class="widget HTML" data-version="1" id="HTML2"><script>
+var linkwithin_site_id = 1837071;
+</script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0"></a></div></div>
+<table class="section-columns columns-2" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot no-items section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot no-items section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+Tema Sencillo. Con la tecnología de <a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target="configAttribution1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div><iframe name="oauth2relay560937022" id="oauth2relay560937022" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40107727-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+<script src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/plusone.js" type="text/javascript" gapi_processed="true"></script>
+
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/1060207849-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY6i52JTb24yvOIVLLzoYNLHseu3nQ:1500372992947';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d206076588588443791','//danielbrena.blogspot.mx/2014/02/crea-tu-primer-red-social-en-php-diseno.html','206076588588443791');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '206076588588443791', 'title': 'Ingeniero en Proceso', 'url': 'http://danielbrena.blogspot.mx/2014/02/crea-tu-primer-red-social-en-php-diseno.html', 'canonicalUrl': 'http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html', 'homepageUrl': 'http://danielbrena.blogspot.mx/', 'searchUrl': 'http://danielbrena.blogspot.mx/search', 'canonicalHomepageUrl': 'http://danielbrena.blogspot.com/', 'blogspotFaviconUrl': 'http://danielbrena.blogspot.mx/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-40107727-1', 'encoding': 'UTF-8', 'locale': 'es', 'localeUnderscoreDelimited': 'es', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Ingeniero en Proceso - RSS\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/206076588588443791/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/3711826817295592133/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'adsenseClientId': 'ca-pub-3767309867134733', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/3832463125-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/ef61d1940ae6a6d0', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Obtener enlace', 'key': 'link', 'shareMessage': 'Obtener enlace', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Compartir en Facebook', 'target': 'facebook'}, {'name': 'Escribe un blog', 'key': 'blogThis', 'shareMessage': 'Escribe un blog', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Compartir en Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Compartir en Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Compartir en Google+', 'target': 'googleplus'}, {'name': 'Correo electrónico', 'key': 'email', 'shareMessage': 'Correo electrónico', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27es\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Más información', 'pageType': 'item', 'postId': '3711826817295592133', 'postImageThumbnailUrl': 'http://1.bp.blogspot.com/-9DqdsNLC1zY/Ubj_22jdSUI/AAAAAAAABC4/pqMDe6jCISc/s72-c/code.png', 'postImageUrl': 'http://1.bp.blogspot.com/-9DqdsNLC1zY/Ubj_22jdSUI/AAAAAAAABC4/pqMDe6jCISc/s1600/code.png', 'pageName': 'Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.', 'pageTitle': 'Ingeniero en Proceso: Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.', 'metaDescription': 'Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.'}}, {'name': 'features', 'data': {'unsupported_browser_message': 'false', 'lightbox_img_parsing': 'false', 'sharing_get_link_dialog': 'false'}}, {'name': 'messages', 'data': {'edit': 'Editar', 'linkCopiedToClipboard': 'El enlace se ha copiado en el Portapapeles.', 'ok': 'Aceptar', 'postLink': 'Enlace de la entrada'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Personalizado', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'simplysimple', 'variantId': 'simplysimple', 'variantName': 'Simply Simple', 'localizedVariantName': 'Simply Simple'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.', 'description': 'Crea tu primer Red Social en PHP - Diseño de la lógica del usuario.', 'featuredImage': 'http://1.bp.blogspot.com/-9DqdsNLC1zY/Ubj_22jdSUI/AAAAAAAABC4/pqMDe6jCISc/s1600/code.png', 'url': 'http://danielbrena.blogspot.mx/2014/02/crea-tu-primer-red-social-en-php-diseno.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 3711826817295592133}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1080070480-lbx__es.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar-right-1', null, document.getElementById('PageList1'), {'title': 'Páginas', 'links': [{'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/', 'title': 'Página principal'}, {'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/p/terminos-y-condiciones-calculuspro.html', 'id': '603075272066258321', 'title': 'Privacy Policy CalculusPro'}, {'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/p/privacy-policy-calculuspro-use-of-this.html', 'id': '7534700544924267334', 'title': 'Privacy Policy Happy Ball'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PlusOneView', new _WidgetInfo('PlusOne1', 'sidebar-right-1', null, document.getElementById('PlusOne1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-right-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PlusFollowersView', new _WidgetInfo('PlusFollowers1', 'sidebar-right-1', null, document.getElementById('PlusFollowers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FollowersView', new _WidgetInfo('Followers1', 'sidebar-right-1', null, document.getElementById('Followers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-right-1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-right-1', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-right-1', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Cargando\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'footer-1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+
+<link type="text/css" rel="stylesheet" href="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/368954415-lightbox_bundle.css"><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crea%20tu%20primer%20Red%20Social%20en%20PHP%20-%20Dise%C3%B1o%20de%20la%20l%C3%B3gica%20del%20usuario%20Archivos/1080070480-lbx__es.js"></script></body></html>

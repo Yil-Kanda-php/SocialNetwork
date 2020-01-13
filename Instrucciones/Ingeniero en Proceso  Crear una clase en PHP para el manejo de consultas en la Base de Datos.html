@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html class="v2" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<link type="text/css" rel="stylesheet" href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/2258130529-css_bundle_v2.css">
+<meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible">
+<meta content="width=1100" name="viewport">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="blogger" name="generator">
+<link href="http://danielbrena.blogspot.mx/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="http://danielbrena.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Ingeniero en Proceso - RSS" href="http://danielbrena.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="https://www.blogger.com/feeds/206076588588443791/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Ingeniero en Proceso - Atom" href="http://danielbrena.blogspot.com/feeds/5842508009909847505/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3832463125-ieretrofit.js"></script>
+<![endif]-->
+<link href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/poo.png" rel="image_src">
+<meta content="Crear una clase en PHP para el manejo de consultas en la Base de Datos.." name="description">
+<meta content="http://danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html" property="og:url">
+<meta content="Crear una clase en PHP para el manejo de consultas en la Base de Datos" property="og:title">
+<meta content="Crear una clase en PHP para el manejo de consultas en la Base de Datos.." property="og:description">
+<meta content="http://3.bp.blogspot.com/-MH3O1lzVAm4/Ujcu_HVZ3fI/AAAAAAAABXU/TKVsYTwgvSE/w1200-h630-p-k-no-nu/poo.png" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Ingeniero en Proceso: Crear una clase en PHP para el manejo de consultas en la Base de Datos</title>
+<link href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/css.css" rel="stylesheet" type="text/css"><style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Open Sans;
+color: #666666;
+background: #ffffff url(http://2.bp.blogspot.com/-e2CNQ65AB4Q/UX2cEcUlY6I/AAAAAAAAA70/48FqBPlHxnU/s0/grid-18px-masked.png) repeat scroll top left;
+padding: 0 0 0 0;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #259dea;
+}
+a:visited {
+text-decoration:none;
+color: #fc3d61;
+}
+a:hover {
+text-decoration:underline;
+color: #217db8;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent none repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 0 #333333;
+box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 40px;
+}
+.content-inner {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: #259dea none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal normal 50px GFS Neohellenic;
+color: #ffffff;
+text-shadow: 0 0 0 rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #ffffff;
+}
+.Header .description {
+font-size: 18px;
+color: #ffffff;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 0;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 0;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 0 solid #fc3d61;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -1px;
+border-top: 1px solid #fc3d61;
+border-left: 1px solid #fc3d61;
+border-right: 1px solid #fc3d61;
+}
+.tabs-inner .widget ul {
+background: transparent none repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #fc3d61;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 14px Open Sans;
+color: #ffffff;
+border-left: 1px solid #ffffff;
+border-right: 1px solid #fc3d61;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #666666;
+background-color: #eeeeee;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #eeeeee;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #eeeeee;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #eeeeee;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 11px 'Trebuchet MS',Trebuchet,Verdana,sans-serif;
+color: #259dea;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #999999;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal normal 11px GFS Neohellenic;
+}
+.date-header span {
+background-color: #fc3d61;
+color: #ffffff;
+padding: 0.4em;
+letter-spacing: 3px;
+margin: inherit;
+}
+.main-inner {
+padding-top: 35px;
+padding-bottom: 65px;
+}
+.main-inner .column-center-inner {
+padding: 0 0;
+}
+.main-inner .column-center-inner .section {
+margin: 0 1em;
+}
+.post {
+margin: 0 0 45px 0;
+}
+h3.post-title, .comments h4 {
+font: normal bold 30px GFS Neohellenic;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #ffffff;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #666666;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #ffffff;
+background-color: #52536d;
+border-bottom: 1px solid #ffffff;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #eeeeee;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #ffffff;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .comment-thread.inline-thread {
+background-color: #52536d;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #eeeeee;
+}
+.blog-pager {
+background: transparent url(//www.blogblog.com/1kt/simple/paging_dot.png) repeat-x scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 1px dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #666666;
+}
+.mobile-link-button {
+background-color: #259dea;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #eeeeee;
+color: #666666;
+border-top: 1px solid #fc3d61;
+border-bottom: 1px solid #fc3d61;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #fc3d61;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1208px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1208px;
+max-width: 1208px;
+_width: 1208px;
+}
+.main-inner .columns {
+padding-left: 0;
+padding-right: 270px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0;
+right: 270px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0") -
+parseInt("270px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 270px;
+}
+.main-inner .column-left-outer {
+width: 0;
+right: 100%;
+margin-left: -0;
+}
+.main-inner .column-right-outer {
+width: 270px;
+margin-right: -270px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<!--SYNTAX HIGHLIGHTER BEGINS-->
+<link href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shCore.css" rel="stylesheet" type="text/css">
+<link href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shThemeDefault.css" rel="stylesheet" type="text/css">
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/rules-p-aRAyv335QWAKb.js"></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/quant.js" async="" type="text/javascript"></script><script async="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/analytics.js"></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/cbgapi.loaded_4" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/cbgapi.loaded_3" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/cbgapi.loaded_2" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/cbgapi.loaded_1" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/cbgapi.loaded_0" async=""></script><script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shCore.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushCpp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushCSharp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushCss.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushJava.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushJScript.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushPhp.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushPython.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushRuby.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushSql.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushVb.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushXml.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushPerl.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/shBrushBash.js" type="text/javascript"></script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/swift.js" type="text/javascript"></script>
+<script language="javascript">
+SyntaxHighlighter.config.bloggerMode = true;
+SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+<!--SYNTAX HIGHLIGHTER ENDS-->
+<link href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/authorization.css" media="all" onload="if(media!='all')media='all'" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=206076588588443791&amp;zx=18b33e82-877d-479c-9d41-245ed1da1ae6' rel='stylesheet'/></noscript>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/google_top_exp.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><script async="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/lazy.js"></script><script type="text/javascript" charset="UTF-8" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/ice.js" async=""></script><script type="text/javascript" charset="UTF-8" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/gsd"></script><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/get_custom_js"></script><style type="text/css"></style><script type="text/javascript" charset="UTF-8" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/getads.htm"></script><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/show_widget"></script></head>
+<body class=" variant-simplysimple">
+<div class="navbar section" id="navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="navbar-iframe" name="navbar-iframe" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/navbar.htm" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d206076588588443791\x26blogName\x3dIngeniero+en+Proceso\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://danielbrena.blogspot.com/search\x26blogLocale\x3des\x26v\x3d2\x26homepageUrl\x3dhttp://danielbrena.blogspot.com/\x26targetPostID\x3d5842508009909847505\x26blogPostOrPageUrl\x3dhttp://danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html\x26vt\x3d-3288976375217678889',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://danielbrena.blogspot.mx/">
+Ingeniero en Proceso
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>Desarrollo de Software en general y en particular.</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs no-items section" id="crosscol"></div>
+<div class="tabs no-items section" id="crosscol-overflow"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>lunes, 27 de enero de 2014</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="http://3.bp.blogspot.com/-MH3O1lzVAm4/Ujcu_HVZ3fI/AAAAAAAABXU/TKVsYTwgvSE/s1600/poo.png" itemprop="image_url">
+<meta content="206076588588443791" itemprop="blogId">
+<meta content="5842508009909847505" itemprop="postId">
+<a name="5842508009909847505"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Crear una clase en PHP para el manejo de consultas en la Base de Datos
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-5842508009909847505" itemprop="articleBody">
+<br>
+<div class="separator" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;">
+<img src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/poo.png" width="200" height="200" border="0"></div>
+<h4>
+<span style="color: #444444;">Porque crear una clase que nos permita 
+realizar las peticiones a la base de datos? Pues cuando empiezas a 
+programar en PHP y necesitar a crear tus consultas para obtener ciertos 
+&nbsp;datos te das cuenta que empiezas a repetir mucho código y ahí es 
+donde te das cuenta que necesitas minimizar el proceso y entras en la 
+POO.</span></h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+La clase consiste en atributos; los atributos estáticos son los que nos permitirá <span id="IL_AD2" class="IL_AD">acceder</span> la <span id="IL_AD5" class="IL_AD">configuración</span> de nuestra base de datos.<br>
+Los atributos protegidos se encargaran de guardar el proceso dentro de la clase, como por ejemplo el atributo <b>query </b>lo usaremos para <span id="IL_AD1" class="IL_AD">generar</span> las peticiones SQL, la <b>row </b>guardara todos los datos que se obtengan de la petición (query).<br>
+<br>
+Los métodos <span id="IL_AD4" class="IL_AD">abstractos</span> get, set, edit y delete serán agregados obligatoriamente en cualquier clase que se herede de ella, usando la palabra reservada <b>extends</b>. Si estos métodos no son agregados a la clase hija, marcara un error.<br>
+<br>
+<div style="text-align: center;">
+<b>Métodos.</b></div>
+<b>open_connection</b><br>
+Este método se encargara de abrir la conexión usando dichos atributos estáticos.<br>
+<br>
+<b>close_connection</b><br>
+Cerrara la conexión.<br>
+<br>
+<b>execute_single_query</b><br>
+Método que permitirá hacer las peticiones simples, las que no es necesario obtener datos.<br>
+<br>
+<a name="more"></a><br><br>
+<b>get_results_from_query</b><br>
+Este método nos generara un arreglo con dichos datos, listos para <span id="IL_AD3" class="IL_AD">mostrar</span>.<br>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-Prp0kx46FuU/Uuc9byKnicI/AAAAAAAABjk/UUQHdioiZYs/s1600/clase.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/clase.png" width="520" height="640" border="0"></a></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="clear: both;"></div>
+<div id="lws_0"><div class="linkwithin_outer" style="margin: 0; border: 0; padding: 0; clear: both; ">
+<div id="linkwithin_inner" class="linkwithin_inner" style="
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 477px;
+    
+    ">
+    <div class="linkwithin_text" id="linkwithin_text_0" style="
+        margin: 0;
+        border: 0;
+        padding: 20px 0 5px;
+        text-align: left;
+        font-weight: bold;
+        ">
+        Quizás también le interese:
+    </div>
+
+    <div class="linkwithin_posts" id="linkwithin_posts_0" style="margin: 0; border: 0; padding: 0">
+        
+
+
+<a name="linkwithin_link_0" href="http://danielbrena.blogspot.com/2013/09/base-de-datos-1-sistemas-de-base-de.html" onmousedown="this.href='http://widget3.linkwithin.com/redirect?url=http%3A//danielbrena.blogspot.com/2013/09/base-de-datos-1-sistemas-de-base-de.html&amp;rtype=&amp;vars=%5B%22http%3A//danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%201837071%2C%200%2C%20%22http%3A//danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%20354863089%2C%200%2C%20330674893%5D&amp;ts=' + (new Date()).getTime(); return true;" style="
+    display: block;
+    float: left;
+
+    
+    border-bottom: none;
+
+    
+
+    margin: 0;
+    padding: 6px;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    " onmouseover="this.style.backgroundColor='#dde'" onmouseout="this.style.backgroundColor=''">
+<div style="width: 106px; height: 165px; margin: 0; border: 0; padding: 0">
+
+<div class="linkwithin_img_0" style="
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 2px;
+    width: auto;
+    height: auto;
+    ">
+
+    <div style="background: url(http://images6.linkwithin.com/images/330674893.jpg) no-repeat; width: 100px; height: 100px; margin: 0; border: 0; padding: 0"></div>
+
+
+</div>
+
+<div class="linkwithin_title linkwithin_title_0" style="margin: 3px 0px 0px; border: 0px none; padding: 0px; font: 12px arial; color: rgb(102, 102, 102);">
+    Base de Datos 1 - Sistemas de Base de Datos.
+</div>
+
+</div>
+</a>
+
+<a name="linkwithin_link_0" href="http://danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html" onmousedown="this.href='http://widget3.linkwithin.com/redirect?url=http%3A//danielbrena.blogspot.com/2014/02/crea-tu-primer-red-social-en-php-diseno.html&amp;rtype=&amp;vars=%5B%22http%3A//danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%201837071%2C%200%2C%20%22http%3A//danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%20354863089%2C%201%2C%20355930047%5D&amp;ts=' + (new Date()).getTime(); return true;" style="
+    display: block;
+    float: left;
+
+    
+    border-left: 1px solid #ddd;
+    
+    border-bottom: none;
+
+    
+
+    margin: 0;
+    padding: 6px;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    " onmouseover="this.style.backgroundColor='#dde'" onmouseout="this.style.backgroundColor=''">
+<div style="width: 106px; height: 165px; margin: 0; border: 0; padding: 0">
+
+<div class="linkwithin_img_0" style="
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 2px;
+    width: auto;
+    height: auto;
+    ">
+
+    <div style="background: url(http://images6.linkwithin.com/images/355930047.jpg) no-repeat; width: 100px; height: 100px; margin: 0; border: 0; padding: 0"></div>
+
+
+</div>
+
+<div class="linkwithin_title linkwithin_title_0" style="margin: 3px 0px 0px; border: 0px none; padding: 0px; font: 12px arial; color: rgb(102, 102, 102);">
+    Crea tu primer Red Social en PHP - Diseño de la lógica ...
+</div>
+
+</div>
+</a>
+
+<a name="linkwithin_link_0" href="http://danielbrena.blogspot.com/2014/01/crea-tu-primer-red-social-en-php-diseno.html" onmousedown="this.href='http://widget3.linkwithin.com/redirect?url=http%3A//danielbrena.blogspot.com/2014/01/crea-tu-primer-red-social-en-php-diseno.html&amp;rtype=&amp;vars=%5B%22http%3A//danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%201837071%2C%200%2C%20%22http%3A//danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%20354863089%2C%202%2C%20354863075%5D&amp;ts=' + (new Date()).getTime(); return true;" style="display: block; float: left; border-left: 1px solid rgb(221, 221, 221); border-bottom: medium none; margin: 0px; padding: 6px; text-decoration: none; text-align: left; cursor: pointer;" onmouseover="this.style.backgroundColor='#dde'" onmouseout="this.style.backgroundColor=''">
+<div style="width: 106px; height: 165px; margin: 0; border: 0; padding: 0">
+
+<div class="linkwithin_img_0" style="
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 2px;
+    width: auto;
+    height: auto;
+    ">
+
+    <div style="background: url(http://images6.linkwithin.com/images/354863075.jpg) no-repeat; width: 100px; height: 100px; margin: 0; border: 0; padding: 0"></div>
+
+
+</div>
+
+<div class="linkwithin_title linkwithin_title_0" style="margin: 3px 0px 0px; border: 0px none; padding: 0px; font: 12px arial; color: rgb(102, 102, 102);">
+    Crea tu primer Red Social en PHP - Diseño de la Base de ...
+</div>
+
+</div>
+</a>
+
+<a name="linkwithin_link_0" href="http://danielbrena.blogspot.com/2014/06/data-access-object-en-php.html" id="linkwithin_link_last" onmousedown="this.href='http://widget3.linkwithin.com/redirect?url=http%3A//danielbrena.blogspot.com/2014/06/data-access-object-en-php.html&amp;rtype=&amp;vars=%5B%22http%3A//danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%201837071%2C%200%2C%20%22http%3A//danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html%22%2C%20354863089%2C%203%2C%20373099361%5D&amp;ts=' + (new Date()).getTime(); return true;" style="display: block; float: left; border-left: 1px solid rgb(221, 221, 221); border-bottom: medium none; margin: 0px; padding: 6px; text-decoration: none; text-align: left; cursor: pointer;" onmouseover="this.style.backgroundColor='#dde'" onmouseout="this.style.backgroundColor=''">
+<div style="width: 106px; height: 165px; margin: 0; border: 0; padding: 0">
+
+<div class="linkwithin_img_0" style="
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 2px;
+    width: auto;
+    height: auto;
+    ">
+
+    <div style="background: url(http://images6.linkwithin.com/images/373099361.jpg) no-repeat; width: 100px; height: 100px; margin: 0; border: 0; padding: 0"></div>
+
+
+</div>
+
+<div class="linkwithin_title linkwithin_title_0" style="margin: 3px 0px 0px; border: 0px none; padding: 0px; font: 12px arial; color: rgb(102, 102, 102);">
+    Data Access Object en PHP
+</div>
+
+</div>
+</a>
+
+
+
+    </div>
+
+    <div id="linkwithin_logo_0" style="
+        clear: both;
+        margin: 0 0 20px 0;
+        border: 0;
+        padding: 5px 6px 0 0;
+        text-align: right;
+        ">
+        <a id="linkwithin_logolink_0" href="http://www.linkwithin.com/learn?ref=widget" style="
+            font: 10px arial;
+            color: #bbb;
+            text-decoration: none;
+            border-bottom: none;
+            " onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" target="_blank">Linkwithin</a>
+    </div>
+</div>
+</div></div></div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1"><span class="post-author vcard">
+Publicado por
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://plus.google.com/100233039541981211032" itemprop="url">
+<a href="https://plus.google.com/100233039541981211032" rel="author" title="author profile">
+<span itemprop="name">Daniel Brena</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+en
+<meta content="http://danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html" itemprop="url">
+<a class="timestamp-link" href="http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2014-01-27T21:35:00-08:00">21:35</abbr></a>
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-1814217097">
+<a href="https://www.blogger.com/post-edit.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;from=pencil" title="Editar entrada">
+<img alt="" class="icon-action" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_edit_allbkg.gif" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;target=email" target="_blank" title="Enviar por correo electrónico"><span class="share-button-link-text">Enviar por correo electrónico</span></a><a class="goog-inline-block share-button sb-blog" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;target=blog" onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target="_blank" title="Escribe un blog"><span class="share-button-link-text">Escribe un blog</span></a><a class="goog-inline-block share-button sb-twitter" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;target=twitter" target="_blank" title="Compartir con Twitter"><span class="share-button-link-text">Compartir con Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;target=facebook" onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target="_blank" title="Compartir con Facebook"><span class="share-button-link-text">Compartir con Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="https://www.blogger.com/share-post.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;target=pinterest" target="_blank" title="Compartir en Pinterest"><span class="share-button-link-text">Compartir en Pinterest</span></a><div class="goog-inline-block google-plus-share-container"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1500734521707" name="I0_1500734521707" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/fastbutton.htm" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div></div>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2"><span class="post-labels">
+Etiquetas:
+<a href="http://danielbrena.blogspot.mx/search/label/Base%20de%20Datos" rel="tag">Base de Datos</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/PHP" rel="tag">PHP</a>,
+<a href="http://danielbrena.blogspot.mx/search/label/POO" rel="tag">POO</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3"><span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>No hay comentarios:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">Publicar un comentario</h4>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;blogspotRpcToken=7021029" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment-editor" src="https://www.blogger.com/comment-iframe.g?blogID=206076588588443791&amp;postID=5842508009909847505&amp;blogspotRpcToken=7021029#%7B%22color%22%3A%22rgb%28102%2C%20102%2C%20102%29%22%2C%22backgroundColor%22%3A%22rgb%28255%2C%20255%2C%20255%29%22%2C%22unvisitedLinkColor%22%3A%22rgb%2837%2C%20157%2C%20234%29%22%2C%22fontFamily%22%3A%22Open%20Sans%22%7D" data-resized="true" width="100%" height="217px" frameborder="0"></iframe>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/569042235-comment_from_post_iframe.js" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" id="Blog1_blog-pager-newer-link" title="Entrada más reciente">Entrada más reciente</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html" id="Blog1_blog-pager-older-link" title="Entrada antigua">Entrada antigua</a>
+</span>
+<a class="home-link" href="http://danielbrena.blogspot.mx/">Página principal</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Suscribirse a:
+<a class="feed-link" href="http://danielbrena.blogspot.com/feeds/5842508009909847505/comments/default" target="_blank" type="application/atom+xml">Enviar comentarios (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">
+    window.___gcfg = { 'lang': 'es' };
+  </script>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget PageList" data-version="1" id="PageList1">
+<h2>Páginas</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://danielbrena.blogspot.mx/">Página principal</a>
+</li>
+<li>
+<a href="http://danielbrena.blogspot.mx/p/terminos-y-condiciones-calculuspro.html">Privacy Policy CalculusPro</a>
+</li>
+<li>
+<a href="http://danielbrena.blogspot.mx/p/privacy-policy-calculuspro-use-of-this.html">Privacy Policy Happy Ball</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=PageList&amp;widgetId=PageList1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList1"));' target="configPageList1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PlusOne" data-version="1" id="PlusOne1">
+<div class="widget-content">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 106px; height: 24px;" id="___plusone_1"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 106px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" tabindex="0" vspace="0" id="I1_1500734521724" name="I1_1500734521724" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/fastbutton_002.htm" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">
+      window.___gcfg = {"lang": "es"};
+    </script>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FDaniel.Brena.A&amp;width=250&amp;height=290&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=true&amp;header=true" scrolling="no" style="border:none; overflow:hidden; width:250px; height:290px;" allowtransparency="true" frameborder="0"></iframe>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target="configHTML1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Profile" data-version="1" id="Profile1">
+<h2>Datos personales</h2>
+<div class="widget-content">
+<a href="https://plus.google.com/100233039541981211032"><img alt="Mi foto" class="profile-img" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/photo.jpg" width="80" height="80"></a>
+<dl class="profile-datablock">
+<dt class="profile-data">
+<a class="profile-name-link g-profile" href="https://plus.google.com/100233039541981211032" rel="author" style="background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+Daniel Brena
+</a>
+<br>
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 124px; height: 20px;" id="___follow_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 124px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I2_1500734521741" name="I2_1500734521741" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/follow.htm" data-gapiattached="true" width="100%" frameborder="0"></iframe></div>
+</dt>
+<dd class="profile-textblock">Estudiante de&nbsp;Ingeniería&nbsp;en Software y Sistemas Computacionales.<br>Microsoft Student Partner México.<br>Fundador de <a href="http://brenacademy.org/" rel="nofollow" target="_blank"><b>BREN</b>ACADEMY</a>.<br><br></dd>
+</dl>
+<a class="profile-link" href="https://plus.google.com/100233039541981211032" rel="author">Ver todo mi perfil</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target="configProfile1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PlusFollowers" data-version="1" id="PlusFollowers1">
+<h2 class="title">Google+ Followers</h2>
+<div class="widget-content">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 200px; height: 296px;" id="___plus_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 200px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 296px;" tabindex="0" vspace="0" id="I3_1500734521750" name="I3_1500734521750" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/followers.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">
+        window.___gcfg = {'lang': 'es'};
+      </script>
+</div>
+</div><div class="widget Followers" data-version="1" id="Followers1">
+<h2 class="title">Seguidores</h2>
+<div class="widget-content">
+<div id="Followers1-wrapper">
+<div style="margin-right:2px;">
+<div><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/plusone.js" gapi_processed="true"></script>
+<div id="followers-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="I0_1500734521987" name="I0_1500734521987" src="https://www.blogger.com/followers.g?blogID=206076588588443791&amp;colors=Cgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50&amp;pageSize=21&amp;postID=5842508009909847505&amp;origin=http://danielbrena.blogspot.mx/&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.es_419.JwI_mdkM9Uk.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCPdznJAnKCuiTzc-eFTHnGVJ6VYgg#id=I0_1500734521987&amp;parent=http%3A%2F%2Fdanielbrena.blogspot.mx&amp;pfname=&amp;rpctoken=40753268" width="100%" height="83" frameborder="0"></iframe></div>
+<script type="text/javascript">
+    window.followersIframe = null;
+    function followersIframeOpen(url) {
+      gapi.load("gapi.iframes", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          window.followersIframe = gapi.iframes.getContext().openChild({
+            url: url,
+            where: document.getElementById("followers-iframe-container"),
+            messageHandlersFilter: gapi.iframes.CROSS_ORIGIN_IFRAMES_FILTER,
+            messageHandlers: {
+              '_ready': function(obj) {
+                window.followersIframe.getIframeEl().height = obj.height;
+              },
+              'reset': function() {
+                window.followersIframe.close();
+                followersIframeOpen("https://www.blogger.com/followers.g?blogID\x3d206076588588443791\x26colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26postID\x3d5842508009909847505\x26origin\x3dhttp://danielbrena.blogspot.mx/");
+              },
+              'open': function(url) {
+                window.followersIframe.close();
+                followersIframeOpen(url);
+              },
+              'blogger-ping': function() {
+              }
+            }
+          });
+        }
+      });
+    }
+    followersIframeOpen("https://www.blogger.com/followers.g?blogID\x3d206076588588443791\x26colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByM2NjY2NjYiByMyNTlkZWEqByNmZmZmZmYyByMyNTlkZWE6ByM2NjY2NjZCByMyNTlkZWFKByM5OTk5OTlSByMyNTlkZWFaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26postID\x3d5842508009909847505\x26origin\x3dhttp://danielbrena.blogspot.mx/");
+  </script></div>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Followers&amp;widgetId=Followers1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Followers1"));' target="configFollowers1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML3">
+<div class="widget-content">
+<script type="text/javascript">
+	 var infolink_pid = 1802567;
+	var infolink_wsid = 0;
+	</script>
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/infolinks_main.js">
+</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target="configHTML3" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<h2>Entradas populares</h2>
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/tablas-de-multiplicar-del-1-al-10-en.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/tablas-de-multiplicar-del-1-al-10-en.html">Tablas de multiplicar del 1 al 10 en Java</a></div>
+<div class="item-snippet">      Vamos a crear las tablas de multiplicar 
+del 1 al 10 en Java, esto es sencillo solo necesitamos un par de bucles 
+for y esta.           ...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/llenar-un-arreglo-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/llenar-un-arreglo-en-java.html">Llenar un arreglo en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/dibujar-cuadrado-vacio-con-asteriscos.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/dibujar-cuadrado-vacio-con-asteriscos.html">Dibujar cuadrado vacio con asteriscos en Java</a></div>
+<div class="item-snippet">      Dibujaremos un cuadrado, pidiendo al 
+usuario el tamaño, ojo, al dibujar el cuadrado les puede salir 
+desfigurado, que tenga mas forma d...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/06/formula-general-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/06/formula-general-en-java.html">Formula General en Java</a></div>
+<div class="item-snippet">    Se llama&nbsp; fórmula general &nbsp;a 
+una&nbsp; fórmula &nbsp;que comprende un número muy grande de casos y de
+ la que se &nbsp;pueden extraer otras fórmulas par...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/04/compilar-y-ejecutar-c-desde-sublime-text.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/sublime.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/04/compilar-y-ejecutar-c-desde-sublime-text.html">Compilar y ejecutar C++ desde Sublime Text</a></div>
+<div class="item-snippet">      Sublime viene con la 
+una&nbsp;opción&nbsp;por defecto para compilar C++, pero no lo ejecuta y
+ lo muestra por la consola, solo crea el archivo .e...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/11/como-declarar-un-arreglo-en-c.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/11/como-declarar-un-arreglo-en-c.html">Como declarar un arreglo en C.</a></div>
+<div class="item-snippet">    Como se usan los arreglos en el lenguaje 
+C.  Hay varias formas de declararlos, una forma es declarar desde el 
+principio el tamaño que te...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_003.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html">Crea tu primer Red Social en PHP - Diseño de la Base de Datos</a></div>
+<div class="item-snippet">      Comenzaremos a desarrollar una pequeña 
+Red Social, no como toda la infraestructura de las actuales como 
+Facebook o Twitter. Llevaremos...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/04/juego-del-ahorcado-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/ahorcado.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/04/juego-del-ahorcado-en-java.html">Juego del ahorcado en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/code_002.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html">Invertir un arreglo de números en Java</a></div>
+<div class="item-snippet">      Invertir un arreglo de números. Podemos 
+tener un arreglo así, por ejemplo: [2,3,4,5,6] y al invertirlo nos 
+quedara [6,5,4,3,2]. Lo mas...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://danielbrena.blogspot.mx/2013/05/triangulo-de-pascal-en-java.html" target="_blank">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/consola.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://danielbrena.blogspot.mx/2013/05/triangulo-de-pascal-en-java.html">Triangulo de Pascal en Java</a></div>
+<div class="item-snippet">
+</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=PopularPosts&amp;widgetId=PopularPosts1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target="configPopularPosts1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" data-version="1" id="Label1">
+<h2>Categorias</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/algoritmo">algoritmo</a>
+<span dir="ltr">(13)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/API">API</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/C%2B%2B">C++</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Facebook">Facebook</a>
+<span dir="ltr">(5)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Hacker%20Cup">Hacker Cup</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/ingenieria">ingenieria</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java">Java</a>
+<span dir="ltr">(25)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java%20b%C3%A1sico">Java básico</a>
+<span dir="ltr">(9)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Java%20Intermedio">Java Intermedio</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/JavaScript">JavaScript</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Matematicas">Matematicas</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/practicas">practicas</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Problemas">Problemas</a>
+<span dir="ltr">(12)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Programa-me">Programa-me</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/python">python</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Sublime%20Text">Sublime Text</a>
+<span dir="ltr">(6)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/teddy%20online%20judge">teddy online judge</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Terminal">Terminal</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://danielbrena.blogspot.mx/search/label/Tutoriales">Tutoriales</a>
+<span dir="ltr">(15)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>Archivo del blog</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/">
+2016
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2016/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/">
+2015
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/08/">
+agosto
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2015/03/">
+marzo
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/">
+2014
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/04/">
+abril
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/02/">
+febrero
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2014/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="posts">
+<li><a href="http://danielbrena.blogspot.mx/2014/01/crea-tu-primer-red-social-en-php-diseno.html">Crea tu primer Red Social en PHP - Diseño de la Ba...</a></li>
+<li><a href="http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html">Crear una clase en PHP para el manejo de consultas...</a></li>
+<li><a href="http://danielbrena.blogspot.mx/2014/01/invertir-un-arreglo-de-numeros-en-java.html">Invertir un arreglo de números en Java</a></li>
+<li><a href="http://danielbrena.blogspot.mx/2014/01/obtener-el-valor-maximo-de-un-arreglo.html">Obtener el valor máximo de un arreglo en Java</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/">
+2013
+</a>
+<span class="post-count" dir="ltr">(49)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/12/">
+diciembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/11/">
+noviembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/09/">
+septiembre
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/08/">
+agosto
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/07/">
+julio
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/06/">
+junio
+</a>
+<span class="post-count" dir="ltr">(11)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/05/">
+mayo
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/04/">
+abril
+</a>
+<span class="post-count" dir="ltr">(10)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/02/">
+febrero
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2013/01/">
+enero
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2012/">
+2012
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://danielbrena.blogspot.mx/2012/12/">
+diciembre
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot section" id="footer-1"><div class="widget HTML" data-version="1" id="HTML2"><script>
+var linkwithin_site_id = 1837071;
+</script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0"></a></div></div>
+<table class="section-columns columns-2" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot no-items section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot no-items section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+Tema Sencillo. Con la tecnología de <a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=206076588588443791&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target="configAttribution1" title="Editar">
+<img alt="" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div><iframe name="oauth2relay1204262284" id="oauth2relay1204262284" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe style="display: none;" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/user_sync.htm" width="1px" height="1px"></iframe><img src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/getuid.txt" style="display: none;" width="0" height="0"><iframe style="display: none;" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/usersyncup-an.htm" width="1px" height="1px"></iframe>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-40107727-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+<script src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/plusone.js" type="text/javascript" gapi_processed="true"></script>
+
+<script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/1060207849-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY5mQQ1DodxmNQ03zz3b81QUpwho5w:1500372992391';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d206076588588443791','//danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html','206076588588443791');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '206076588588443791', 'title': 'Ingeniero en Proceso', 'url': 'http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html', 'canonicalUrl': 'http://danielbrena.blogspot.com/2014/01/crear-una-clase-en-php-para-el-manejo.html', 'homepageUrl': 'http://danielbrena.blogspot.mx/', 'searchUrl': 'http://danielbrena.blogspot.mx/search', 'canonicalHomepageUrl': 'http://danielbrena.blogspot.com/', 'blogspotFaviconUrl': 'http://danielbrena.blogspot.mx/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-40107727-1', 'encoding': 'UTF-8', 'locale': 'es', 'localeUnderscoreDelimited': 'es', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Ingeniero en Proceso - RSS\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/206076588588443791/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Ingeniero en Proceso - Atom\x22 href\x3d\x22http://danielbrena.blogspot.com/feeds/5842508009909847505/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'adsenseClientId': 'ca-pub-3767309867134733', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/3832463125-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/d11edf3f68fa7b7e', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Obtener enlace', 'key': 'link', 'shareMessage': 'Obtener enlace', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Compartir en Facebook', 'target': 'facebook'}, {'name': 'Escribe un blog', 'key': 'blogThis', 'shareMessage': 'Escribe un blog', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Compartir en Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Compartir en Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Compartir en Google+', 'target': 'googleplus'}, {'name': 'Correo electrónico', 'key': 'email', 'shareMessage': 'Correo electrónico', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27es\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Más información', 'pageType': 'item', 'postId': '5842508009909847505', 'postImageThumbnailUrl': 'http://3.bp.blogspot.com/-MH3O1lzVAm4/Ujcu_HVZ3fI/AAAAAAAABXU/TKVsYTwgvSE/s72-c/poo.png', 'postImageUrl': 'http://3.bp.blogspot.com/-MH3O1lzVAm4/Ujcu_HVZ3fI/AAAAAAAABXU/TKVsYTwgvSE/s1600/poo.png', 'pageName': 'Crear una clase en PHP para el manejo de consultas en la Base de Datos', 'pageTitle': 'Ingeniero en Proceso: Crear una clase en PHP para el manejo de consultas en la Base de Datos', 'metaDescription': 'Crear una clase en PHP para el manejo de consultas en la Base de Datos..'}}, {'name': 'features', 'data': {'unsupported_browser_message': 'false', 'lightbox_img_parsing': 'false', 'sharing_get_link_dialog': 'false'}}, {'name': 'messages', 'data': {'edit': 'Editar', 'linkCopiedToClipboard': 'El enlace se ha copiado en el Portapapeles.', 'ok': 'Aceptar', 'postLink': 'Enlace de la entrada'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Personalizado', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'simplysimple', 'variantId': 'simplysimple', 'variantName': 'Simply Simple', 'localizedVariantName': 'Simply Simple'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Crear una clase en PHP para el manejo de consultas en la Base de Datos', 'description': 'Crear una clase en PHP para el manejo de consultas en la Base de Datos..', 'featuredImage': 'http://3.bp.blogspot.com/-MH3O1lzVAm4/Ujcu_HVZ3fI/AAAAAAAABXU/TKVsYTwgvSE/s1600/poo.png', 'url': 'http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 5842508009909847505}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1080070480-lbx__es.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar-right-1', null, document.getElementById('PageList1'), {'title': 'Páginas', 'links': [{'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/', 'title': 'Página principal'}, {'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/p/terminos-y-condiciones-calculuspro.html', 'id': '603075272066258321', 'title': 'Privacy Policy CalculusPro'}, {'isCurrentPage': false, 'href': 'http://danielbrena.blogspot.mx/p/privacy-policy-calculuspro-use-of-this.html', 'id': '7534700544924267334', 'title': 'Privacy Policy Happy Ball'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PlusOneView', new _WidgetInfo('PlusOne1', 'sidebar-right-1', null, document.getElementById('PlusOne1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-right-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PlusFollowersView', new _WidgetInfo('PlusFollowers1', 'sidebar-right-1', null, document.getElementById('PlusFollowers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FollowersView', new _WidgetInfo('Followers1', 'sidebar-right-1', null, document.getElementById('Followers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-right-1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-right-1', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-right-1', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Cargando\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'footer-1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+
+<link type="text/css" rel="stylesheet" href="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/368954415-lightbox_bundle.css"><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/quantcast.js"></script><div style="display:none !important"><div data-d_il_insearch_1_0_otq0fjexmti="" style="display: none"></div>      <div style="display: ; position:absolute;top:0; left:0;    width:300px; height:305px; background-color:#FFFFFF; cursor: pointer;">                                    <div style="position:absolute; width:300px; height:24px; left:15px; top:20px; color:#4E4E4E; font-family:Trebuchet MS,Arial,sans-serif; font-size:15pt; font-weight:normal; font-style:normal; "><span title="You might also like" style="color:#4E4E4E;            font-weight: bold; font-size:15pt; overflow:hidden;">You might also like </span>                        </div>         <div style="position:absolute; top:4px;  right:47px; width:48px; height:11px; cursor:pointer; font-size:1px; ">             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="11px" viewBox="0 0 636 144" enable-background="new 0 0 636 144" xml:space="preserve">        <g>                  <path fill="#208CE5" d="M16.918,24.865c5.848,0,10.57-4.735,10.57-10.583s-4.722-10.57-10.57-10.57 S6.334,8.434,6.334,14.282S11.07,24.865,16.918,24.865"></path>                  <path fill="#003366" d="M88.085,43.784H77.024c-17.149,0-31.181,14.031-31.181,31.182v34.796 c0,0.218,0.016,0.415,0.027,0.618v5.185c0,5.71-4.672,10.382-10.382,10.382h-0.467c-5.71,0-10.382-4.672-10.382-10.382V92.608 h0.015V45.889v-0.025c0-1.124-0.885-2.033-2.01-2.08h-11.49c-1.09,0.047-1.949,0.907-1.986,1.996v46.828h0.04 c-0.015,0.355-0.04,0.707-0.04,1.066v22.246c0,14.031,11.479,25.512,25.511,25.512h1.151c14.031,0,25.511-11.48,25.511-25.512 v-5.466v-4.62v-28.89c0.082-9.872,8.159-17.948,18.031-17.948h6.366c9.871,0,17.948,8.076,18.042,17.948v28.89v4.62v28.873 c0.013,0.023,0.013,0.034,0.013,0.048c0,1.111,0.883,2.008,1.983,2.057h11.505c1.077-0.036,1.936-0.887,1.985-1.973v-27.966v-5.659 V74.966C119.267,57.815,105.234,43.784,88.085,43.784"></path>                  <path fill="#003366" d="M155.069,56.972v82.643c-0.072,0.992-0.886,1.78-1.903,1.818h-11.014 c-1.062-0.038-1.912-0.897-1.912-1.962c0-0.024,0-0.048-0.023-0.073V34.456c0.716-17.064,14.923-30.744,32.179-30.744h8.536 c0.025,0,0.038,0.011,0.06,0.011c1.053,0,1.915,0.849,1.974,1.901v11.037c-0.035,1.016-0.85,1.844-1.878,1.889h-8.692 c-9.509,0-17.327,7.75-17.327,17.268v6.301V56.972z"></path>                  <path fill="#003366" d="M151.99,59.104h28.873c0.023-0.012,0.034-0.012,0.047-0.012 c1.111,0,2.008-0.884,2.057-1.984V45.604c-0.036-1.078-0.887-1.938-1.973-1.986h-27.965"></path>                  <path fill="#003366" d="M276.24,107.925h0.158V76.608c-0.37-18.164-15.248-32.825-33.494-32.825 h-16.756v0.022c-17.875,0.431-32.322,14.924-32.679,32.803h-0.026v31.316c0,18.213,14.601,33.064,32.705,33.496v0.012h16.589h0.021 h0.146C261.304,141.349,276.24,126.354,276.24,107.925 M208.93,107.925L208.93,107.925V77.289c0-9.914,8.096-18.02,18.021-18.02 h15.953c9.946,0,18.02,8.106,18.02,18.02v30.636h-0.167c0,9.949-8.074,18.021-17.999,18.021h-15.807 C217.026,125.946,208.93,117.874,208.93,107.925"></path>                  <path fill="#003366" d="M312.844,139.376L312.844,139.376c0,1.064-0.798,1.938-1.829,2.045h-11.816 c-1.027-0.107-1.837-0.98-1.837-2.045h-0.013V5.769h0.013c0-1.135,0.908-2.033,2.031-2.057h11.432 c1.124,0.024,2.019,0.922,2.019,2.057V139.376z"></path>                  <path fill="#208CE5" d="M341.662,24.865c5.848,0,10.57-4.735,10.57-10.583s-4.723-10.57-10.57-10.57 s-10.584,4.722-10.584,10.57S335.814,24.865,341.662,24.865"></path>                  <path fill="#003366" d="M412.829,43.784h-11.061c-17.149,0-31.181,14.031-31.181,31.182v34.796 c0,0.218,0.016,0.415,0.026,0.618v5.185c0,5.71-4.672,10.382-10.382,10.382h-0.468c-5.71,0-10.382-4.672-10.382-10.382V92.608 h0.016V45.723v-0.025c0-1.123-0.885-2.033-2.01-2.08h-11.49c-1.091,0.047-1.949,0.908-1.986,1.996v46.994h0.04 c-0.015,0.355-0.04,0.707-0.04,1.066v22.246c0,14.031,11.479,25.512,25.512,25.512h1.15c14.031,0,25.512-11.48,25.512-25.512 v-5.466v-4.62v-28.89c0.082-9.872,8.158-17.948,18.029-17.948h6.367c9.871,0,17.947,8.076,18.041,17.948v28.89v4.62v28.873 c0.014,0.023,0.014,0.034,0.014,0.048c0,1.111,0.883,2.008,1.982,2.057h11.506c1.076-0.036,1.936-0.887,1.984-1.973v-27.966v-5.659 V74.966C444.01,57.815,429.979,43.784,412.829,43.784"></path>                  <path fill="#003366" d="M480.277,139.376L480.277,139.376V91.735h0.146h9.255l40.656,48.766 c0.599,0.549,1.15,0.906,1.841,0.932h16.073c0.882-0.025,2.869-0.322,1.794-2.056l-0.013-0.024l-47.58-56.777l44.599-36.815 c0.015-0.049,0.015-0.049,0.036-0.073c1.066-1.734-0.886-2.032-1.78-2.069H527.08c-0.621,0.024-1.15,0.324-1.666,0.791 l-36.812,31.075h-8.325V5.769c0-1.135-0.896-2.033-2.02-2.057h-11.422c-1.124,0.024-2.033,0.922-2.033,2.057v133.607 c0,1.064,0.803,1.938,1.844,2.045h11.802C479.476,141.313,480.277,140.44,480.277,139.376"></path>                  <path fill="#003366" d="M603.208,84.782H577.99c-6.91-0.114-12.508-5.785-12.508-12.783 c0-6.996,5.598-12.895,12.508-12.895h39.271c1.146,0,2.08-0.959,2.08-2.111v0.191V45.752v-0.037c0-1.164-0.935-2.097-2.08-2.097 H577.99c-15.451,0-28.008,12.73-28.008,28.381c0,15.651,12.557,28.381,28.008,28.27h24.252c6.911,0.111,12.508,5.812,12.508,12.795 c0,6.996-5.597,12.896-12.508,12.896H591.56l0.001-0.014h-28.874c-0.022,0.014-0.034,0.014-0.047,0.014 c-1.11,0-2.007,0.896-2.056,2.01v11.449c0.035,1.092,0.886,1.963,1.973,2.014h0.225h27.74h12.224 c15.209-0.279,27.491-12.9,27.491-28.369C630.236,97.737,618.191,85.202,603.208,84.782"></path>        </g>       </svg>           </div>            <div style="position:absolute; right:26px; top:3px; width:15px; height:15px;  background-position:0 0; cursor:pointer; font-size:1px;">    </div>    <div style="position:absolute; right:10px; top:3px; width:15px; height:15px;  background-position:-15px 0; cursor:pointer; font-size:1px;">    </div>   </div>      <div style="position:relative;   bottom:-50px; margin-top: 0px ; left:0; width:300px;   height:250px;   padding-top:0px; background-color:#ffffff;; cursor: pointer;">    <div style="position:absolute; top:0px; left:0; width:300px; height:250px; background-color:#ffffff;; cursor: pointer;">                               <iframe src="//resources.infolinks.com/static/blank.html" scrolling="no" width="300" height="250" frameborder="0"></iframe>        <form method="post" action="http://router.infolinks.com/echo.htm?hookId=d_IL_INSEARCH" target="IL_SR_FRAME" accept-charset="utf-8" style="display:none;"> <input value="%3Etpircs%2F%3C%3E%22191924%3Ddigatwc%261%3Dtenpwc%26052%3Dthgiehwc%26003%3Dhtdiwwc%26889955%3Ddipwc%26052X003%3Dtamrofdawc%26002%3Dnurwc%26DAWEIV%3Dnoitca%3Fxpsa.sjteg%2FhsilbuPgaT%2Fmoc.bewtxetnoc.gat%2F%2F%3Asptth%22%3Dcrs%20tpircs%3C" type="hidden"> <input value="1802567" type="hidden"> <input value="0" type="hidden"> <input value="http://danielbrena.blogspot.mx/2014/01/crear-una-clase-en-php-para-el-manejo.html" type="hidden"> <input value="1609.003" type="hidden"></form>                                  </div>   </div></div><script type="text/javascript" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/1080070480-lbx__es.js"></script><img style="display: none; width: 1px; height: 1px;" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/adview.htm"><img style="display: none; width: 1px; height: 1px;" src="Ingeniero%20en%20Proceso%20%20Crear%20una%20clase%20en%20PHP%20para%20el%20manejo%20de%20consultas%20en%20la%20Base%20de%20Datos%20Archivos/adview_002.htm"></body></html>
